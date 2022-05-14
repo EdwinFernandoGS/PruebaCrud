@@ -37,10 +37,8 @@ public class PersonaRest {
 	
 	
 	@DeleteMapping(value = "{id}")
-    public void borrarPersona(@PathVariable Integer id) {
-		pS.borrarPersona(id);
-		  
-            
+    public Mono<Void> borrarPersona(@PathVariable Integer id) {
+		return pS.borrarPersona(id);    
     }
 	
 	@GetMapping(value = "{id}")
